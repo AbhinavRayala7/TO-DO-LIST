@@ -1,42 +1,180 @@
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+body{
+  background: linear-gradient(135deg,#f0f4ff 0%,#e5edff 100%);
+  min-height: 100vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 0;
+  padding: 20px;
+  color:  #1e293b;
 }
-.container {
-  background: white;
-  padding: 2em;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+.app-card{
+  background:  #ffffff;
+  width: 100%;
+  max-width: 480px;
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+.app-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.date-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 4px;
+  margin-bottom: 1.25rem;
+}
+.input-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 1.25rem;
 }
 input[type="text"] {
-  padding: 10px;
-  width: 70%;
-  margin-right: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  flex: 1;
+  padding: 12px 14px;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  outline: none;
 }
-button {
-  padding: 10px 15px;
+input[type="text"]:focus {
+  border-color: #4f46e5;
+}
+button#addBtn {
+  padding: 12px 18px;
+  background: #4f46e5;
+  color: #fff;
   border: none;
-  background-color: #5c67f2;
-  color: white;
-  border-radius: 5px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+button#addBtn:hover {
+  background: #4338ca;
+}
+button#addBtn:active {
+  transform: scale(0.98);
+}
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+.filter-btn {
+  background: none;
+  border: none;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  color: #64748b;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+}
+.filter-btn.active {
+  color: #4f46e5;
+  background: #eef2ff;
+  font-weight: 600;
+}
+.task-counter {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 340px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f8fafc;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #f1f5f9;
+  transition: background 0.15s;
+}
+.task-item:hover {
+  background: #f1f5f9;
+}
+.task-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
   cursor: pointer;
 }
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 1em;
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: #4f46e5;
+  cursor: pointer;
 }
-li {
-  background: #eee;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 5px;
+.task-text {
+  font-size: 0.95rem;
+  color: #334155;
+  word-break: break-word;
+}
+.task-item.completed .task-text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+.delete-btn {
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 6px;
+  transition: color 0.15s;
+}
+.delete-btn:hover {
+  color: #ef4444;
+}
+.app-footer {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.clear-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.clear-btn:hover {
+  color: #64748b;
+  text-decoration: underline;
+}
+.site-banner {
+  margin-top: 1.5rem;       /* <-- Clean spacing between box and text */
+  font-size: 0.85rem;
+  color: #64748b;
+  letter-spacing: 0.5px;
+}
+
+.site-banner a {
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
 }
